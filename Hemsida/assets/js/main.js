@@ -41,14 +41,11 @@
 
 					var $this = $(this);
 
-					// External link? Bail.
 					if ($this.attr('href').charAt(0) != '#')
 						return;
 
-					// Deactivate all links.
 					$sidebar_a.removeClass('active');
 
-					// Activate link *and* lock it (so Scrollex doesn't try to activate other links as we're scrolling to this one's section).
 					$this
 						.addClass('active')
 						.addClass('active-locked');
@@ -177,49 +174,41 @@
 
 				}
 			});
-
 	});
-
-
-
-
-
 })(jQuery);
 
-
+var trigger = true;
 $(window).scroll(function () {
-	if ($(window).scrollTop() + $(window).height() > $(document).height() - 400) {
-
-
-		var morphing = anime({
-			targets: '#morphing .polymorph',
-			points: [{
-					value: '-0.5,-0.5 177.5,682.5 959.5,1079.5 -0.5,1079.5 '
-				},
-				{
-					value: '-0.5,-0.5 1246,29 959.5,1079.5 -0.5,1079.5 '
-				},
-				{
-					value: '-0.5,-0.5 1246,29 1819,596 -0.5,1079.5 '
-				},
-				{
-					value: '-0.5,-0.5 1857,-1 1652,540 -0.5,1079.5 '
-				},
-			],
-			easing: 'easeOutQuad',
-			duration: 2000,
-			loop: false
-		});
+	if (trigger) {
+		if ($(window).scrollTop() + $(window).height() > $(document).height() - 400) {
+			var morphing = anime({
+				targets: '#morphing .polymorph',
+				points: [{
+						value: '-0.5,-0.5 177.5,682.5 959.5,1079.5 -0.5,1079.5 '
+					},
+					{
+						value: '-0.5,-0.5 1246,29 959.5,1079.5 -0.5,1079.5 '
+					},
+					{
+						value: '-0.5,-0.5 1246,29 1819,596 -0.5,1079.5 '
+					},
+					{
+						value: '-0.5,-0.5 1857,-1 1652,540 -0.5,1079.5 '
+					},
+				],
+				easing: 'easeOutQuad',
+				duration: 2000,
+				loop: false
+			});
+			trigger = false;
+		}
 	}
-
-
 });
 
 $(window).scroll(function () {
-	if ($(window).scrollTop()  > $(window).height() -50 ) {
+	if ($(window).scrollTop() > $(window).height() - 50) {
 		$('.clicker a').css('color', 'black');
-	} else{
-		$('.clicker a').css('color', 'white');	
+	} else {
+		$('.clicker a').css('color', 'white');
 	}
 });
-
