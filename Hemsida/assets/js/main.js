@@ -1,5 +1,4 @@
 (function ($) {
-
 	skel.breakpoints({
 		xlarge: '(max-width: 1680px)',
 		large: '(max-width: 1280px)',
@@ -7,9 +6,7 @@
 		small: '(max-width: 736px)',
 		xsmall: '(max-width: 480px)'
 	});
-
 	$(function () {
-
 		var $window = $(window),
 			$body = $('body'),
 			$sidebar = $('#sidebar');
@@ -27,14 +24,8 @@
 				$body.removeClass('is-loading');
 			}, 100);
 		});
-
-		// Forms.
-
-		// Sidebar.
 		if ($sidebar.length > 0) {
-
 			var $sidebar_a = $sidebar.find('a');
-
 			$sidebar_a
 				.addClass('scrolly')
 				.on('click', function () {
@@ -49,9 +40,6 @@
 					$this
 						.addClass('active')
 						.addClass('active-locked');
-
-
-
 				})
 				.each(function () {
 

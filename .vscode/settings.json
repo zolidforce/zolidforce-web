@@ -1,5 +1,18 @@
 {
     "cSpell.words": [
         "zolidforce"
-    ]
+    ],
+    "workbench.colorCustomizations": {
+        "editorCursor.foreground": "#0be881",
+        "editor.background": "#181818",
+        "editor.foreground": "#FFFFFF",
+        "editor.lineHighlightBackground": "#00438f62",
+        "editor.selectionHighlightBackground": "#be00f8bd",
+        "editor.findMatchBackground": "#f800f885",
+        "editor.findMatchHighlightBackground": "#f800f8a6",
+        "editor.findRangeHighlightBackground": "#00000088",
+        "editor.selectionBackground": "#f863009a",
+        "editor.inactiveSelectionBackground": "#30303088"
+    }
+
 }
